@@ -1,0 +1,84 @@
+<div class="container">
+    <div class="form-group center-block">
+        <form [formGroup]="registerForm" (ngSubmit)="creerCompte()">           
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" formControlName="nom"  [(ngModel)]="nom" id="nom">
+                    <div *ngIf="f.nom.errors" class="invalid-feedback d-block">
+                        Vous devez renseigner un nom.
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                 <div class="col-md-6 mb-3">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" formControlName="prenom"  [(ngModel)]="prenom" id="prenom">
+                <div *ngIf="f.prenom.errors" class="invalid-feedback d-block">
+                    Vous devez renseigner un prenom.
+                  </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="adresse">Adresse</label>
+                <input type="text" class="form-control" formControlName="adresse" [(ngModel)]="adresse" id="adresse">
+                <div *ngIf="f.adresse.errors " class="invalid-feedback d-block">
+                    Vous devez renseigner une adresse.
+                  </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="telephone">Telephone</label>
+                    <input type="text" class="form-control" formControlName="telephone"  [(ngModel)]="telephone" id="telephone">
+                        <div *ngIf="f.telephone.errors?.required " class="invalid-feedback d-block">
+                            Vous devez renseigner un numéro de téléphone.
+                        </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                
+                        <input type="email" class="form-control" formControlName="email" [(ngModel)]="email" id="email">
+                        <div *ngIf="f.email.errors?.required" class="invalid-feedback d-block">
+                            Vous devez renseigner une adresse mail.
+                        </div>
+                        <div *ngIf="f.email.errors?.email" class="invalid-feedback d-block">
+                            Vous devez renseigner une adresse mail valide.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+
+            <hr class="mb-4">
+
+            <div class="mb-3">
+                <label for="login">Login</label>
+                <input type="text" class="form-control" formControlName="login" [(ngModel)]="login" id="login">
+                <div *ngIf="f.login.errors" class="invalid-feedback d-block">
+                        Vous devez renseigner un login.
+                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="password">Mot de Passe</label>
+                    <input type="password" class="form-control" formControlName="mdp" id="password">
+                    <div *ngIf="f.mdp.errors" class="invalid-feedback d-block">
+                        Vous devez renseigner un mot de passe.
+                      </div>
+                </div>
+                
+            </div>
+            
+            <button type="submit" class="btn btn-primary"><a routerLink="/inscription/connexion" routerLinkActive="active">Valider</a></button>
+        </form>
+    </div>
+</div>

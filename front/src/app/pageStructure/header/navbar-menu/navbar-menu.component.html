@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+         <a routerLink="/home" routerLinkActive="active" class="nav-link"> Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/catalogue" routerLinkActive="active" class="nav-link"> Catalogue</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/panier" routerLinkActive="active" class="nav-link"> Panier<span class="badge badge-light"> {{nbProducts}} </span></a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/inscription" routerLinkActive="active" class="nav-link"> Inscription</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/inscription/connexion" routerLinkActive="active" class="nav-link"> Connexion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

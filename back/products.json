@@ -1,0 +1,5 @@
+[   {"ref":"0","produit":"linux","prix":10.2,"qte":2},
+    {"ref":"1","produit":"oracle","prix":13.5,"qte":4},
+    {"ref":"2","produit":"angular","prix":11.8,"qte":5},
+    {"ref":"3","produit":"typescript","prix":5,"qte":1}
+]

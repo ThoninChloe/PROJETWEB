@@ -1,0 +1,28 @@
+
+<table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prix</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of panier | async">
+        <td > <img src="./../../../../assets/{{ p.photo }}" height=60%> </td>
+        <td >{{p.ref}}</td>
+        <td >{{p.produit}} {{p.prix}}</td>
+        <td > {{p.qte}}</td>
+        <td>
+            <button mat-button (click)="onDelClick(p.ref,p.photo,p.produit,p.prix,p.qte)">DEL</button>
+        </td>
+        <td>
+            <button mat-button ><a [routerLink] = "['/catalogue/detail',p.id]"  >[+]</a> </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <router-outlet></router-outlet>  

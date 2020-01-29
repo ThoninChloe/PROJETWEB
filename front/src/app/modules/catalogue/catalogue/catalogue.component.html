@@ -1,0 +1,50 @@
+
+<form [formGroup]="searchForm"  class="form-inline my-2 my-lg-0">
+  <input type="text" [formControl]="search" class="form-control">
+  <button class="btn btn-outline-success my-2 my-sm-0" (click)='getSearchResult()' type="submit">Search</button>
+</form>
+<br><div id="result">
+  <p> Résultat : </p>
+  <div *ngFor="let item of productSearch | async">
+
+      <p>Nom : {{ item.nom }}</p>
+      <p>Prix : {{ item.prix }}€ </p>
+      <p>Type : {{ item.prenom }}</p>
+</div>
+
+
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of produits">
+      <td > <img src="./../../../../assets/{{p.photo}}" height=20%> </td>
+      <td >{{ p.id }}</td>
+      <td >{{ p.prenom}} {{ p.nom}} </td>
+      <td >{{ p.prix }}</td>
+      <td>
+        <div [class.alternate-button]="isAlternateMode">
+          <button mat-button (click)="onClick(p.id,p.photo,p.prenom,p.nom,p.prix)">ADD</button>
+        </div>
+      </td>
+      <td>
+          <button mat-button ><a [routerLink] = "['/catalogue/detail',p.id]"  >[+]</a> </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<router-outlet></router-outlet>
